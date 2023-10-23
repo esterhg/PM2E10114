@@ -1,0 +1,42 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:PM2E10114"
+             x:Class="PM2E10114.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#00532c" Padding="20" CornerRadius="0">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="uth.png" WidthRequest="60" HeightRequest="60" VerticalOptions="CenterAndExpand"/>
+                    <ContentView VerticalOptions="CenterAndExpand">
+                        <Label Text="SITE VISITOR APP" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+                    </ContentView>
+                </StackLayout>
+            </Frame>
+
+            <Label Text="IMAGEN" FontSize="Title" Padding="155,30"/>
+            <Image x:Name="Img"></Image>
+            <Button Text="TOMAR FOTO" Clicked="Button_tomarFoto" BackgroundColor="#00532c" CornerRadius="10" TextColor="White" />
+
+            <Label Text="Latitud" FontSize="15" Padding="10"/>
+            <Frame CornerRadius="10" HasShadow="False" BackgroundColor="White" Padding="10">
+                <Label x:Name="latitud" FontSize="15"  />
+            </Frame>
+
+            <Label Text="Longitud" FontSize="15" Padding="10"/>
+            <Frame CornerRadius="10" HasShadow="False" BackgroundColor="White" Padding="10">
+                <Label x:Name="longitud" FontSize="15" />
+            </Frame>
+
+            <Label Text="Descripción" FontSize="15" Padding="10"/>
+            <Frame CornerRadius="10" HasShadow="False" BackgroundColor="White" WidthRequest="100" HeightRequest="150">
+                <Editor  x:Name="descrip" Placeholder="Escribe...." FontSize="15"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="15">
+                <Button Text="Agregar" Clicked="Button_agregar" BackgroundColor="#00532c" CornerRadius="10" TextColor="White"  WidthRequest="100" HeightRequest="70"/>
+                <Button Text="Lista Sitios" Clicked="Button_lista" BackgroundColor="#00532c" CornerRadius="10" TextColor="White" WidthRequest="100" HeightRequest="70"/>
+                <Button Text="Salir App" Clicked="Button_salir" BackgroundColor="#00532c" CornerRadius="10" TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="PM2E10114.MapPage">
+
+    <ContentPage.Content>
+        <RelativeLayout>
+            <maps:Map MapType="Street" x:Name="formMap" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" />
+
+            <Image Source="locationOn.png" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=formMap, Property=Height, Factor=0.75}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=formMap, Property=Width, Factor=0.84}" HeightRequest="60" WidthRequest="60">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MoveToCurrentLocation" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Button Text="Compartir Imagen" Clicked="ShareImage" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}" />
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

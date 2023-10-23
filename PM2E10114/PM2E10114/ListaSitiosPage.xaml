@@ -1,0 +1,41 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E10114.ListaSitiosPage"
+             xmlns:conver="clr-namespace:PM2E10114.Controllers" >
+    <ContentPage.Resources>
+        <conver:ByteArrayImage x:Key="ByteArray"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lstSitios" ItemSelected="OnItemSelect">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding ID}" Grid.Row="0" Grid.Column="0" TextColor="Black" />
+                                <Image x:Name="imagen" Source="{Binding ImagenBytes, Converter={StaticResource ByteArray}}" Grid.Row="0" Grid.Column="1" WidthRequest="120" HeightRequest="120"  />
+                                <Label Text="{Binding Latitud}" Grid.Row="0" Grid.Column="2" TextColor="Black"/>
+                                <Label Text="{Binding Longitud}" Grid.Row="0" Grid.Column="3" TextColor="Black"/>
+                                <Label Text="{Binding Descripcion}" Grid.Row="0" Grid.Column="4" TextColor="Black"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Vertical" Padding="15">
+                <Button x:Name="btnEliminar" Text="Eliminar" Clicked="Button_eliminar" BackgroundColor="#00532c" CornerRadius="10" TextColor="White" WidthRequest="100" HeightRequest="70"/>
+                <Button x:Name="btnMapa" Text="Ver mapa" BackgroundColor="#00532c" CornerRadius="10" TextColor="White" WidthRequest="100" HeightRequest="70"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
